@@ -1,659 +1,968 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kelompok Kelas · 36 Siswa</title>
-  <!-- Font & ikon -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin Kelompok · 36 Siswa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      background: #f5f7fc;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      padding: 2rem 1.5rem;
-      color: #1e293b;
-      display: flex;
-      justify-content: center;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f0f4f9;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
 
-    .app-container {
-      max-width: 1300px;
-      width: 100%;
-    }
+        .app {
+            max-width: 1400px;
+            width: 100%;
+            background: white;
+            border-radius: 40px;
+            padding: 30px 35px 40px;
+            box-shadow: 0 25px 50px -10px rgba(0,0,0,0.08);
+            border: 1px solid #eef3f8;
+        }
 
-    /* header */
-    .header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 2.5rem;
-    }
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
 
-    .header h1 {
-      font-weight: 600;
-      font-size: 2rem;
-      letter-spacing: -0.02em;
-      background: linear-gradient(145deg, #1e293b, #334155);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
 
-    .header h1 i {
-      background: #ffffff;
-      padding: 0.5rem;
-      border-radius: 40px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
-      color: #2563eb;
-      -webkit-text-fill-color: #2563eb;
-    }
+        .header-left h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0a1929;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-    .stats-badge {
-      background: white;
-      padding: 0.5rem 1.4rem;
-      border-radius: 60px;
-      font-weight: 500;
-      font-size: 0.95rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-      border: 1px solid #eef2f6;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+        .header-left h1 i {
+            color: #2563eb;
+            background: #eef4ff;
+            padding: 10px;
+            border-radius: 16px;
+            font-size: 22px;
+        }
 
-    .stats-badge i {
-      color: #2563eb;
-    }
+        .stats-badge {
+            background: #f8fafc;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 14px;
+            color: #1e293b;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-    /* kontrol panel */
-    .control-panel {
-      background: #ffffff;
-      border-radius: 32px;
-      padding: 1.8rem 2rem;
-      margin-bottom: 2.5rem;
-      box-shadow: 0 20px 40px -12px rgba(0,0,0,0.04), 0 4px 18px rgba(0,0,0,0.02);
-      border: 1px solid #f0f4fa;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-end;
-      gap: 1.8rem 2.5rem;
-    }
+        .stats-badge i {
+            color: #2563eb;
+        }
 
-    .control-group {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.8rem 1.2rem;
-    }
+        /* Control Panel */
+        .control-panel {
+            background: #f8fafc;
+            border-radius: 28px;
+            padding: 22px 28px;
+            margin-bottom: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            gap: 20px 30px;
+            border: 1px solid #eef3f8;
+        }
 
-    .control-group label {
-      font-weight: 500;
-      font-size: 0.9rem;
-      color: #475569;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
 
-    .control-group label i {
-      color: #64748b;
-      font-size: 0.9rem;
-    }
+        .control-group label {
+            font-weight: 600;
+            font-size: 13px;
+            color: #475569;
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
 
-    select, input[type="number"] {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 40px;
-      padding: 0.6rem 1.2rem;
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 0.95rem;
-      color: #0f172a;
-      outline: none;
-      transition: 0.2s;
-      min-width: 140px;
-      cursor: pointer;
-    }
+        .control-group label i {
+            color: #64748b;
+            font-size: 14px;
+        }
 
-    select:focus, input[type="number"]:focus {
-      border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(37,99,235,0.08);
-      background: white;
-    }
+        .control-group input[type="number"],
+        .control-group select {
+            background: white;
+            border: 1px solid #dce3ec;
+            border-radius: 14px;
+            padding: 10px 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 15px;
+            color: #0f172a;
+            outline: none;
+            transition: 0.2s;
+            min-width: 130px;
+        }
 
-    .btn {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 60px;
-      padding: 0.65rem 1.5rem;
-      font-weight: 500;
-      font-size: 0.95rem;
-      color: #1e293b;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      transition: 0.2s;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.01);
-      font-family: 'Inter', sans-serif;
-    }
+        .control-group input[type="number"]:focus,
+        .control-group select:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.08);
+        }
 
-    .btn-primary {
-      background: #2563eb;
-      border: 1px solid #2563eb;
-      color: white;
-      box-shadow: 0 8px 18px -6px rgba(37,99,235,0.25);
-    }
+        .gender-options {
+            display: flex;
+            gap: 14px;
+            background: white;
+            padding: 6px 14px;
+            border-radius: 40px;
+            border: 1px solid #dce3ec;
+        }
 
-    .btn-primary:hover {
-      background: #1d4ed8;
-      border-color: #1d4ed8;
-      transform: scale(0.98);
-    }
+        .gender-options label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            color: #1e293b;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 30px;
+            transition: 0.15s;
+        }
 
-    .btn-outline {
-      background: transparent;
-      border: 1px solid #e2e8f0;
-    }
+        .gender-options label:hover {
+            background: #f1f5f9;
+        }
 
-    .btn-outline:hover {
-      background: #f8fafc;
-      border-color: #cbd5e1;
-    }
+        .gender-options input[type="radio"] {
+            accent-color: #2563eb;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
 
-    .btn-success {
-      background: #0b8a4e;
-      border: 1px solid #0b8a4e;
-      color: white;
-    }
+        .btn {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 60px;
+            border: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
 
-    .btn-success:hover {
-      background: #0a7643;
-    }
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+            box-shadow: 0 8px 20px -8px rgba(37,99,235,0.3);
+        }
 
-    .btn-warning {
-      background: #f59e0b;
-      border: 1px solid #f59e0b;
-      color: white;
-    }
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
 
-    .btn-warning:hover {
-      background: #d97706;
-    }
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
 
-    .btn-sm {
-      padding: 0.4rem 1rem;
-      font-size: 0.85rem;
-    }
+        .btn-success {
+            background: #0b8a4e;
+            color: white;
+        }
 
-    .gender-tag {
-      display: flex;
-      align-items: center;
-      gap: 0.2rem 1rem;
-      flex-wrap: wrap;
-    }
+        .btn-success:hover {
+            background: #0a7643;
+        }
 
-    .gender-tag label {
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-weight: 400;
-      color: #334155;
-    }
+        .btn-outline {
+            background: white;
+            color: #1e293b;
+            border: 1px solid #dce3ec;
+        }
 
-    .gender-tag input[type="radio"] {
-      accent-color: #2563eb;
-      width: 16px;
-      height: 16px;
-      cursor: pointer;
-    }
+        .btn-outline:hover {
+            background: #f8fafc;
+            border-color: #b0c0d0;
+        }
 
-    /* daftar siswa */
-    .siswa-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 0.8rem;
-      background: white;
-      padding: 1.5rem;
-      border-radius: 28px;
-      border: 1px solid #f0f4fa;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.02);
-      margin-bottom: 2.5rem;
-    }
+        .btn-warning {
+            background: #f59e0b;
+            color: white;
+        }
 
-    .siswa-item {
-      background: #fafcff;
-      padding: 0.7rem 1.2rem;
-      border-radius: 60px;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      border: 1px solid #edf2f7;
-      transition: 0.1s;
-      font-weight: 500;
-      font-size: 0.9rem;
-    }
+        .btn-warning:hover {
+            background: #d97706;
+        }
 
-    .siswa-item i {
-      width: 20px;
-      color: #64748b;
-      font-size: 0.9rem;
-    }
+        .btn-danger {
+            background: #ef4444;
+            color: white;
+        }
 
-    .siswa-item .gender-male { color: #2563eb; }
-    .siswa-item .gender-female { color: #ec4899; }
+        .btn-danger:hover {
+            background: #dc2626;
+        }
 
-    /* hasil kelompok */
-    .result-section {
-      background: white;
-      border-radius: 32px;
-      padding: 1.8rem 2rem;
-      border: 1px solid #f0f4fa;
-      box-shadow: 0 20px 40px -12px rgba(0,0,0,0.03);
-    }
+        .btn-sm {
+            padding: 6px 16px;
+            font-size: 12px;
+        }
 
-    .result-header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2rem;
-    }
+        /* Student Grid */
+        .student-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 8px;
+            background: white;
+            padding: 16px 20px;
+            border-radius: 24px;
+            border: 1px solid #eef3f8;
+            margin-bottom: 28px;
+            min-height: 60px;
+        }
 
-    .result-header h3 {
-      font-weight: 600;
-      font-size: 1.3rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+        .student-chip {
+            background: #f8fafc;
+            padding: 7px 14px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            font-size: 13px;
+            border: 1px solid #edf2f7;
+            transition: 0.15s;
+        }
 
-    .kelompok-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
+        .student-chip i {
+            font-size: 14px;
+        }
 
-    .kelompok-card {
-      background: #fafdff;
-      border-radius: 24px;
-      padding: 1.2rem 1.2rem 1rem;
-      border: 1px solid #eef4f9;
-      transition: 0.15s;
-    }
+        .student-chip .gender-male { color: #2563eb; }
+        .student-chip .gender-female { color: #ec4899; }
 
-    .kelompok-card:hover {
-      border-color: #dae3ed;
-    }
+        /* Spinner Section */
+        .spinner-section {
+            background: #fafdff;
+            border-radius: 28px;
+            padding: 24px 28px;
+            margin-bottom: 28px;
+            border: 1px solid #eef3f8;
+            text-align: center;
+        }
 
-    .kelompok-card h4 {
-      font-weight: 600;
-      font-size: 1rem;
-      color: #0f172a;
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px dashed #e2eaf2;
-      padding-bottom: 0.6rem;
-      margin-bottom: 0.8rem;
-    }
+        .spinner-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
 
-    .kelompok-card h4 span {
-      background: #eef4fa;
-      border-radius: 40px;
-      padding: 0.1rem 0.8rem;
-      font-weight: 500;
-      font-size: 0.75rem;
-      color: #334155;
-    }
+        .spinner-box {
+            flex: 1;
+            min-width: 200px;
+        }
 
-    .anggota-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-    }
+        .spinner-wheel {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, #2563eb, #7c3aed, #ec4899, #f59e0b, #2563eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+            transition: transform 0.1s;
+            box-shadow: 0 10px 30px rgba(37,99,235,0.15);
+        }
 
-    .anggota-item {
-      font-size: 0.9rem;
-      padding: 0.25rem 0.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      border-radius: 40px;
-      color: #1e293b;
-    }
+        .spinner-wheel.spinning {
+            animation: spin 0.8s cubic-bezier(0.17, 0.67, 0.12, 0.99) infinite;
+        }
 
-    .anggota-item i {
-      width: 18px;
-      font-size: 0.8rem;
-      color: #64748b;
-    }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
-    .empty-state {
-      color: #94a3b8;
-      text-align: center;
-      padding: 3rem 1rem;
-      font-weight: 400;
-    }
+        .spinner-wheel .inner-circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            color: #0f172a;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.04);
+        }
 
-    .badge-gender {
-      font-size: 0.7rem;
-      background: #eef2f6;
-      padding: 0.15rem 0.7rem;
-      border-radius: 30px;
-      color: #334155;
-      font-weight: 500;
-    }
+        .spinner-info {
+            flex: 1;
+            min-width: 200px;
+            text-align: left;
+        }
 
-    .footer-actions {
-      margin-top: 2rem;
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+        .spinner-info .current-name {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0a1929;
+            margin-bottom: 4px;
+        }
 
-    @media (max-width: 600px) {
-      .control-panel { flex-direction: column; align-items: stretch; }
-      .header h1 { font-size: 1.6rem; }
-    }
-  </style>
+        .spinner-info .current-group {
+            font-size: 16px;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        .spinner-info .progress-text {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-top: 8px;
+        }
+
+        .spinner-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 14px;
+            justify-content: center;
+        }
+
+        /* Results */
+        .result-section {
+            background: white;
+            border-radius: 28px;
+            padding: 24px 28px;
+            border: 1px solid #eef3f8;
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .result-header h3 {
+            font-weight: 700;
+            font-size: 20px;
+            color: #0a1929;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .result-header h3 i {
+            color: #2563eb;
+        }
+
+        .group-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .group-card {
+            background: #fafdff;
+            border-radius: 20px;
+            padding: 16px 18px;
+            border: 1px solid #eef3f8;
+            transition: 0.15s;
+        }
+
+        .group-card:hover {
+            border-color: #d0dce8;
+        }
+
+        .group-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eef3f8;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .group-card-header h4 {
+            font-weight: 600;
+            font-size: 15px;
+            color: #0a1929;
+        }
+
+        .group-card-header .badge {
+            background: #eef4fa;
+            padding: 2px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .group-members {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .group-member {
+            font-size: 14px;
+            padding: 4px 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-radius: 8px;
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .group-member i {
+            width: 18px;
+            font-size: 13px;
+        }
+
+        .empty-state {
+            color: #94a3b8;
+            text-align: center;
+            padding: 40px 20px;
+            font-weight: 400;
+        }
+
+        .empty-state i {
+            font-size: 40px;
+            margin-bottom: 12px;
+            display: block;
+            color: #cbd5e1;
+        }
+
+        .footer-actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #eef3f8;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-bar .fill {
+            height: 100%;
+            background: #2563eb;
+            border-radius: 10px;
+            transition: width 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .app { padding: 16px; }
+            .control-panel { flex-direction: column; align-items: stretch; }
+            .spinner-display { flex-direction: column; }
+            .spinner-info { text-align: center; }
+            .gender-options { flex-wrap: wrap; }
+            .header-left h1 { font-size: 22px; }
+        }
+    </style>
 </head>
 <body>
-<div class="app-container" id="app">
-
-  <!-- header -->
-  <div class="header">
-    <h1><i class="fas fa-users"></i> Kelompok Kelas</h1>
-    <div class="stats-badge">
-      <i class="fas fa-user-graduate"></i> 36 siswa
-    </div>
-  </div>
-
-  <!-- kontrol -->
-  <div class="control-panel">
-    <div class="control-group">
-      <label><i class="fas fa-layer-group"></i> Jumlah kelompok</label>
-      <input type="number" id="jumlahKelompok" min="2" max="10" value="6">
+<div class="app" id="app">
+    <!-- Header -->
+    <div class="header">
+        <div class="header-left">
+            <h1><i class="fas fa-user-graduate"></i> Spin Kelompok</h1>
+        </div>
+        <div class="stats-badge">
+            <i class="fas fa-users"></i> 36 Siswa
+        </div>
     </div>
 
-    <div class="control-group gender-tag">
-      <label><i class="fas fa-venus-mars"></i> Komposisi</label>
-      <label><input type="radio" name="genderMode" value="campur" checked> Campuran</label>
-      <label><input type="radio" name="genderMode" value="full_cewe"> Full Cewe</label>
-      <label><input type="radio" name="genderMode" value="full_cowo"> Full Cowo</label>
+    <!-- Control Panel -->
+    <div class="control-panel">
+        <div class="control-group">
+            <label><i class="fas fa-layer-group"></i> Jumlah Kelompok</label>
+            <input type="number" id="groupCount" min="2" max="10" value="6">
+        </div>
+        <div class="control-group">
+            <label><i class="fas fa-venus-mars"></i> Komposisi</label>
+            <div class="gender-options">
+                <label><input type="radio" name="genderMode" value="campur" checked> Campuran</label>
+                <label><input type="radio" name="genderMode" value="full_cewe"> Full Cewe</label>
+                <label><input type="radio" name="genderMode" value="full_cowo"> Full Cowo</label>
+            </div>
+        </div>
+        <div class="control-group" style="flex-direction:row; gap:8px; align-items:center;">
+            <button class="btn btn-primary" id="btnSpinAll"><i class="fas fa-play"></i> Spin Semua</button>
+            <button class="btn btn-outline" id="btnReset"><i class="fas fa-undo"></i> Reset</button>
+        </div>
     </div>
 
-    <div class="control-group">
-      <button class="btn btn-primary" id="btnBagi"><i class="fas fa-arrow-right-arrow-left"></i> Bagi Kelompok</button>
-      <button class="btn btn-outline" id="btnReset"><i class="fas fa-rotate-left"></i> Reset</button>
-    </div>
-  </div>
+    <!-- Student Grid -->
+    <div class="student-grid" id="studentGrid"></div>
 
-  <!-- daftar siswa -->
-  <div class="siswa-grid" id="siswaGrid"></div>
+    <!-- Spinner Section -->
+    <div class="spinner-section" id="spinnerSection">
+        <div class="spinner-display">
+            <div class="spinner-box">
+                <div class="spinner-wheel" id="spinnerWheel">
+                    <div class="inner-circle" id="spinnerInner">?</div>
+                </div>
+            </div>
+            <div class="spinner-info">
+                <div class="current-name" id="currentName">—</div>
+                <div class="current-group" id="currentGroup">Belum mulai</div>
+                <div class="progress-text" id="progressText">0 / 36 siswa</div>
+                <div class="progress-bar"><div class="fill" id="progressFill" style="width:0%"></div></div>
+                <div class="spinner-controls">
+                    <button class="btn btn-success btn-sm" id="btnSpinOne"><i class="fas fa-arrow-right"></i> Spin 1</button>
+                    <button class="btn btn-warning btn-sm" id="btnSpinAuto"><i class="fas fa-infinity"></i> Auto</button>
+                    <button class="btn btn-danger btn-sm" id="btnStopAuto"><i class="fas fa-stop"></i> Stop</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <!-- hasil kelompok -->
-  <div class="result-section">
-    <div class="result-header">
-      <h3><i class="fas fa-people-group" style="color:#2563eb;"></i> Hasil Pembagian</h3>
-      <span id="infoKelompok" style="font-size:0.9rem; color:#475569;"></span>
+    <!-- Results -->
+    <div class="result-section">
+        <div class="result-header">
+            <h3><i class="fas fa-people-group"></i> Hasil Kelompok</h3>
+            <span id="resultInfo" style="font-size:14px; color:#475569;"></span>
+        </div>
+        <div id="groupContainer">
+            <div class="empty-state">
+                <i class="fas fa-users-slash"></i>
+                Spin siswa untuk membentuk kelompok
+            </div>
+        </div>
+        <div class="footer-actions">
+            <button class="btn btn-success btn-sm" id="btnExport"><i class="fas fa-file-export"></i> Export JSON</button>
+            <button class="btn btn-outline btn-sm" id="btnClearGroups"><i class="fas fa-trash-alt"></i> Hapus Kelompok</button>
+        </div>
     </div>
-    <div id="kelompokContainer">
-      <div class="empty-state"><i class="fas fa-users-slash" style="margin-right: 0.5rem;"></i> Tekan "Bagi Kelompok" untuk melihat hasil</div>
-    </div>
-    <div class="footer-actions">
-      <button class="btn btn-success btn-sm" id="btnExportJSON"><i class="fas fa-file-export"></i> Export JSON</button>
-    </div>
-  </div>
 </div>
 
 <script>
-  (function(){
-    // data awal 36 siswa (18 cewe, 18 cowo)
-    const NAMA_CEWE = [
-      "Aisyah", "Bella", "Citra", "Dewi", "Eka", "Farah", "Gina", "Hana", 
-      "Indah", "Jasmine", "Karina", "Laras", "Maya", "Nadia", "Oktavia", 
-      "Putri", "Rani", "Sari"
-    ];
-    const NAMA_COWO = [
-      "Andi", "Budi", "Candra", "Dedi", "Eko", "Fajar", "Gilang", "Hendra",
-      "Irfan", "Joko", "Krisna", "Lutfi", "Miko", "Nanda", "Omar",
-      "Pratama", "Rizky", "Sandi"
-    ];
+    (function() {
+        // Data siswa
+        const FEMALE_NAMES = [
+            "Aisyah", "Bella", "Citra", "Dewi", "Eka", "Farah", "Gina", "Hana",
+            "Indah", "Jasmine", "Karina", "Laras", "Maya", "Nadia", "Oktavia",
+            "Putri", "Rani", "Sari"
+        ];
+        const MALE_NAMES = [
+            "Andi", "Budi", "Candra", "Dedi", "Eko", "Fajar", "Gilang", "Hendra",
+            "Irfan", "Joko", "Krisna", "Lutfi", "Miko", "Nanda", "Omar",
+            "Pratama", "Rizky", "Sandi"
+        ];
 
-    let siswa = []; // array objek { id, nama, gender }
-    let kelompokTerakhir = [];
+        let students = [];
+        let groups = [];
+        let spinQueue = [];
+        let isSpinning = false;
+        let autoSpinInterval = null;
+        let currentSpinIndex = 0;
 
-    // inisialisasi data
-    function initSiswa() {
-      siswa = [];
-      let id = 1;
-      NAMA_CEWE.forEach(n => {
-        siswa.push({ id: id++, nama: n, gender: 'cewe' });
-      });
-      NAMA_COWO.forEach(n => {
-        siswa.push({ id: id++, nama: n, gender: 'cowo' });
-      });
-      // acak urutan agar lebih natural
-      shuffleArray(siswa);
-    }
+        // DOM refs
+        const studentGrid = document.getElementById('studentGrid');
+        const groupContainer = document.getElementById('groupContainer');
+        const spinnerWheel = document.getElementById('spinnerWheel');
+        const spinnerInner = document.getElementById('spinnerInner');
+        const currentName = document.getElementById('currentName');
+        const currentGroup = document.getElementById('currentGroup');
+        const progressText = document.getElementById('progressText');
+        const progressFill = document.getElementById('progressFill');
+        const resultInfo = document.getElementById('resultInfo');
 
-    function shuffleArray(arr) {
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-      return arr;
-    }
-
-    // render daftar siswa
-    function renderSiswa() {
-      const grid = document.getElementById('siswaGrid');
-      grid.innerHTML = '';
-      siswa.forEach(s => {
-        const div = document.createElement('div');
-        div.className = 'siswa-item';
-        const icon = s.gender === 'cewe' ? 'fa-venus' : 'fa-mars';
-        const colorClass = s.gender === 'cewe' ? 'gender-female' : 'gender-male';
-        div.innerHTML = `<i class="fas ${icon} ${colorClass}"></i> ${s.nama} <span style="margin-left:auto; font-size:0.7rem; color:#94a3b8;">#${s.id}</span>`;
-        grid.appendChild(div);
-      });
-    }
-
-    // algoritma pembagian kelompok dengan aturan gender
-    function bagiKelompok(jumlahKelompok, modeGender) {
-      if (jumlahKelompok < 2) return [];
-      const total = siswa.length;
-      if (jumlahKelompok > total) return [];
-
-      // clone siswa
-      let pool = [...siswa];
-
-      // filter berdasarkan mode
-      let filtered = [];
-      if (modeGender === 'full_cewe') {
-        filtered = pool.filter(s => s.gender === 'cewe');
-        if (filtered.length < jumlahKelompok * 2) {
-          alert(`Jumlah cewe (${filtered.length}) tidak cukup untuk ${jumlahKelompok} kelompok (min 2 per kelompok).`);
-          return [];
-        }
-      } else if (modeGender === 'full_cowo') {
-        filtered = pool.filter(s => s.gender === 'cowo');
-        if (filtered.length < jumlahKelompok * 2) {
-          alert(`Jumlah cowo (${filtered.length}) tidak cukup untuk ${jumlahKelompok} kelompok (min 2 per kelompok).`);
-          return [];
-        }
-      } else {
-        // campuran: semua siswa, minimal 2 per kelompok, total 36 ok
-        filtered = pool;
-        if (filtered.length < jumlahKelompok * 2) {
-          alert(`Total siswa (${filtered.length}) tidak cukup untuk ${jumlahKelompok} kelompok (min 2 per kelompok).`);
-          return [];
-        }
-      }
-
-      // acak ulang biar random
-      shuffleArray(filtered);
-
-      // bagi rata
-      const kelompok = Array.from({ length: jumlahKelompok }, () => []);
-      let idx = 0;
-      // distribusi round-robin biar merata
-      while (filtered.length > 0) {
-        const s = filtered.shift();
-        kelompok[idx % jumlahKelompok].push(s);
-        idx++;
-      }
-
-      // jika ada kelompok <2, pindahkan dari kelompok lain (tapi karena total>=2*N, aman)
-      // tapi tetap perbaiki jika ada yang kurang
-      for (let i = 0; i < kelompok.length; i++) {
-        if (kelompok[i].length < 2) {
-          // cari kelompok dengan >2
-          for (let j = 0; j < kelompok.length; j++) {
-            if (j !== i && kelompok[j].length > 2) {
-              const pindah = kelompok[j].pop();
-              kelompok[i].push(pindah);
-              break;
+        function shuffle(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
             }
-          }
+            return arr;
         }
-      }
 
-      // jika masih ada yang <2 (sangat jarang) beri warning
-      for (let k of kelompok) {
-        if (k.length < 2) {
-          alert('Ada kelompok dengan kurang dari 2 anggota, coba kurangi jumlah kelompok.');
-          return [];
+        function initStudents() {
+            students = [];
+            let id = 1;
+            FEMALE_NAMES.forEach(n => students.push({ id: id++, name: n, gender: 'female' }));
+            MALE_NAMES.forEach(n => students.push({ id: id++, name: n, gender: 'male' }));
+            shuffle(students);
         }
-      }
 
-      return kelompok;
-    }
+        function renderStudents() {
+            studentGrid.innerHTML = '';
+            students.forEach(s => {
+                const chip = document.createElement('div');
+                chip.className = 'student-chip';
+                const icon = s.gender === 'female' ? 'fa-venus' : 'fa-mars';
+                const colorClass = s.gender === 'female' ? 'gender-female' : 'gender-male';
+                chip.innerHTML = `<i class="fas ${icon} ${colorClass}"></i> ${s.name}`;
+                studentGrid.appendChild(chip);
+            });
+        }
 
-    // tampilkan hasil kelompok di UI
-    function renderKelompok(kelompok) {
-      const container = document.getElementById('kelompokContainer');
-      const info = document.getElementById('infoKelompok');
-      if (!kelompok || kelompok.length === 0) {
-        container.innerHTML = `<div class="empty-state"><i class="fas fa-users-slash" style="margin-right:0.5rem;"></i> Tekan "Bagi Kelompok" untuk melihat hasil</div>`;
-        info.textContent = '';
-        return;
-      }
+        function renderGroups() {
+            if (!groups || groups.length === 0) {
+                groupContainer.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-users-slash"></i>
+                        Spin siswa untuk membentuk kelompok
+                    </div>
+                `;
+                resultInfo.textContent = '';
+                return;
+            }
 
-      let html = `<div class="kelompok-grid">`;
-      kelompok.forEach((anggota, index) => {
-        const count = anggota.length;
-        // hitung gender
-        let cewe = 0, cowo = 0;
-        anggota.forEach(a => { if (a.gender === 'cewe') cewe++; else cowo++; });
-        const genderLabel = cewe === 0 ? '👨 cowo' : (cowo === 0 ? '👩 cewe' : `⚤ ${cewe}👩 ${cowo}👨`);
-        html += `<div class="kelompok-card">
-          <h4>Kelompok ${index+1} <span>${count} anggota</span></h4>
-          <div class="anggota-list">`;
-        anggota.forEach(a => {
-          const icon = a.gender === 'cewe' ? 'fa-venus' : 'fa-mars';
-          const color = a.gender === 'cewe' ? 'gender-female' : 'gender-male';
-          html += `<div class="anggota-item"><i class="fas ${icon} ${color}"></i> ${a.nama}</div>`;
+            let html = `<div class="group-grid">`;
+            groups.forEach((g, idx) => {
+                const count = g.length;
+                let female = 0, male = 0;
+                g.forEach(m => { if (m.gender === 'female') female++; else male++; });
+                const label = female > 0 && male > 0 ? 'Campuran' : (female > 0 ? 'Cewe' : 'Cowo');
+                html += `
+                    <div class="group-card">
+                        <div class="group-card-header">
+                            <h4><i class="fas fa-users" style="color:#2563eb;margin-right:6px;"></i> Kelompok ${idx+1}</h4>
+                            <span class="badge">${count} orang · ${label}</span>
+                        </div>
+                        <div class="group-members">
+                `;
+                g.forEach(m => {
+                    const icon = m.gender === 'female' ? 'fa-venus' : 'fa-mars';
+                    const color = m.gender === 'female' ? '#ec4899' : '#2563eb';
+                    html += `
+                        <div class="group-member">
+                            <i class="fas ${icon}" style="color:${color};"></i>
+                            ${m.name}
+                        </div>
+                    `;
+                });
+                html += `</div></div>`;
+            });
+            html += `</div>`;
+            groupContainer.innerHTML = html;
+            resultInfo.textContent = `${groups.length} kelompok · ${students.length} siswa terbagi`;
+        }
+
+        // Algoritma pembagian kelompok (untuk spin)
+        function buildGroupsFromQueue(groupCount, mode) {
+            const total = students.length;
+            if (groupCount < 2 || groupCount > total) return [];
+
+            let pool = [...students];
+            if (mode === 'full_cewe') {
+                pool = pool.filter(s => s.gender === 'female');
+                if (pool.length < groupCount * 2) {
+                    alert(`Siswa cewe (${pool.length}) tidak cukup untuk ${groupCount} kelompok (min 2 per kelompok).`);
+                    return [];
+                }
+            } else if (mode === 'full_cowo') {
+                pool = pool.filter(s => s.gender === 'male');
+                if (pool.length < groupCount * 2) {
+                    alert(`Siswa cowo (${pool.length}) tidak cukup untuk ${groupCount} kelompok (min 2 per kelompok).`);
+                    return [];
+                }
+            }
+
+            shuffle(pool);
+            const result = Array.from({ length: groupCount }, () => []);
+            let idx = 0;
+            while (pool.length > 0) {
+                result[idx % groupCount].push(pool.shift());
+                idx++;
+            }
+
+            // Pastikan minimal 2 per kelompok
+            for (let i = 0; i < result.length; i++) {
+                if (result[i].length < 2) {
+                    for (let j = 0; j < result.length; j++) {
+                        if (j !== i && result[j].length > 2) {
+                            result[i].push(result[j].pop());
+                            break;
+                        }
+                    }
+                }
+            }
+
+            // Cek lagi
+            for (let g of result) {
+                if (g.length < 2) {
+                    alert('Ada kelompok dengan < 2 anggota. Kurangi jumlah kelompok.');
+                    return [];
+                }
+            }
+            return result;
+        }
+
+        // Spin logic
+        function startSpinAll() {
+            if (isSpinning) return;
+            const groupCount = parseInt(document.getElementById('groupCount').value) || 6;
+            const modeRadios = document.querySelectorAll('input[name="genderMode"]');
+            let mode = 'campur';
+            for (let r of modeRadios) if (r.checked) mode = r.value;
+
+            const newGroups = buildGroupsFromQueue(groupCount, mode);
+            if (!newGroups || newGroups.length === 0) return;
+
+            groups = newGroups;
+            // Flatten untuk spin queue
+            spinQueue = [];
+            groups.forEach((g, idx) => {
+                g.forEach(s => {
+                    spinQueue.push({ student: s, groupIndex: idx });
+                });
+            });
+            shuffle(spinQueue); // random urutan spin
+            currentSpinIndex = 0;
+            renderGroups();
+            renderStudents();
+            updateSpinnerInfo();
+            // Mulai spin otomatis
+            if (autoSpinInterval) clearInterval(autoSpinInterval);
+            autoSpinInterval = setInterval(() => {
+                if (!isSpinning && spinQueue.length > 0 && currentSpinIndex < spinQueue.length) {
+                    spinOne();
+                } else if (currentSpinIndex >= spinQueue.length) {
+                    clearInterval(autoSpinInterval);
+                    autoSpinInterval = null;
+                    document.getElementById('btnSpinAll').disabled = false;
+                }
+            }, 800);
+            document.getElementById('btnSpinAll').disabled = true;
+        }
+
+        function spinOne() {
+            if (isSpinning) return;
+            if (spinQueue.length === 0 || currentSpinIndex >= spinQueue.length) {
+                // selesai
+                if (autoSpinInterval) {
+                    clearInterval(autoSpinInterval);
+                    autoSpinInterval = null;
+                }
+                document.getElementById('btnSpinAll').disabled = false;
+                return;
+            }
+
+            isSpinning = true;
+            const item = spinQueue[currentSpinIndex];
+            const student = item.student;
+            const groupIdx = item.groupIndex;
+
+            // Animasi spinner 5 detik
+            spinnerWheel.classList.add('spinning');
+            let counter = 0;
+            const interval = setInterval(() => {
+                counter++;
+                const icons = ['fa-user', 'fa-user-graduate', 'fa-user-tie', 'fa-user-astronaut'];
+                const icon = icons[Math.floor(Math.random() * icons.length)];
+                spinnerInner.innerHTML = `<i class="fas ${icon}" style="font-size:28px;color:#2563eb;"></i>`;
+            }, 300);
+
+            setTimeout(() => {
+                clearInterval(interval);
+                spinnerWheel.classList.remove('spinning');
+                // Tampilkan nama
+                const icon = student.gender === 'female' ? 'fa-venus' : 'fa-mars';
+                const color = student.gender === 'female' ? '#ec4899' : '#2563eb';
+                spinnerInner.innerHTML = `<i class="fas ${icon}" style="font-size:30px;color:${color};"></i>`;
+                currentName.textContent = student.name;
+                currentGroup.textContent = `→ Kelompok ${groupIdx+1}`;
+                currentName.style.color = color;
+
+                // Progress
+                currentSpinIndex++;
+                const total = spinQueue.length;
+                const done = currentSpinIndex;
+                progressText.textContent = `${done} / ${total} siswa`;
+                progressFill.style.width = `${(done/total)*100}%`;
+
+                isSpinning = false;
+                document.getElementById('btnSpinAll').disabled = false;
+
+                // Jika selesai
+                if (currentSpinIndex >= spinQueue.length) {
+                    if (autoSpinInterval) {
+                        clearInterval(autoSpinInterval);
+                        autoSpinInterval = null;
+                    }
+                    document.getElementById('btnSpinAll').disabled = false;
+                    currentGroup.textContent = '✓ Selesai!';
+                    spinnerInner.innerHTML = `<i class="fas fa-check-circle" style="font-size:30px;color:#0b8a4e;"></i>`;
+                }
+            }, 5000);
+        }
+
+        function updateSpinnerInfo() {
+            if (spinQueue.length > 0 && currentSpinIndex < spinQueue.length) {
+                const total = spinQueue.length;
+                const done = currentSpinIndex;
+                progressText.textContent = `${done} / ${total} siswa`;
+                progressFill.style.width = `${(done/total)*100}%`;
+            } else {
+                progressText.textContent = `0 / 0 siswa`;
+                progressFill.style.width = `0%`;
+            }
+        }
+
+        function resetAll() {
+            if (autoSpinInterval) {
+                clearInterval(autoSpinInterval);
+                autoSpinInterval = null;
+            }
+            isSpinning = false;
+            spinQueue = [];
+            currentSpinIndex = 0;
+            groups = [];
+            initStudents();
+            renderStudents();
+            renderGroups();
+            spinnerWheel.classList.remove('spinning');
+            spinnerInner.innerHTML = '?';
+            currentName.textContent = '—';
+            currentGroup.textContent = 'Belum mulai';
+            progressText.textContent = '0 / 36 siswa';
+            progressFill.style.width = '0%';
+            document.getElementById('btnSpinAll').disabled = false;
+            document.getElementById('groupCount').value = 6;
+            document.querySelector('input[name="genderMode"][value="campur"]').checked = true;
+        }
+
+        function exportJSON() {
+            if (!groups || groups.length === 0) {
+                alert('Belum ada kelompok. Spin terlebih dahulu.');
+                return;
+            }
+            const data = {
+                students: students,
+                groups: groups,
+                timestamp: new Date().toISOString()
+            };
+            const json = JSON.stringify(data, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `kelompok_spin_${new Date().toISOString().slice(0,10)}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function clearGroups() {
+            if (autoSpinInterval) {
+                clearInterval(autoSpinInterval);
+                autoSpinInterval = null;
+            }
+            isSpinning = false;
+            spinQueue = [];
+            currentSpinIndex = 0;
+            groups = [];
+            renderGroups();
+            spinnerWheel.classList.remove('spinning');
+            spinnerInner.innerHTML = '?';
+            currentName.textContent = '—';
+            currentGroup.textContent = 'Belum mulai';
+            progressText.textContent = '0 / 36 siswa';
+            progressFill.style.width = '0%';
+            document.getElementById('btnSpinAll').disabled = false;
+        }
+
+        // Event listeners
+        document.getElementById('btnSpinAll').addEventListener('click', startSpinAll);
+        document.getElementById('btnSpinOne').addEventListener('click', () => {
+            if (!isSpinning && spinQueue.length > 0 && currentSpinIndex < spinQueue.length) {
+                spinOne();
+            } else if (spinQueue.length === 0 || currentSpinIndex >= spinQueue.length) {
+                alert('Selesaikan spin semua terlebih dahulu atau reset.');
+            }
         });
-        html += `</div><div style="margin-top:0.6rem; font-size:0.7rem; color:#64748b;"><span class="badge-gender">${genderLabel}</span></div>`;
-        html += `</div>`;
-      });
-      html += `</div>`;
-      container.innerHTML = html;
-      info.textContent = `${kelompok.length} kelompok · total ${siswa.length} siswa`;
-      kelompokTerakhir = kelompok;
-    }
+        document.getElementById('btnSpinAuto').addEventListener('click', () => {
+            if (autoSpinInterval) {
+                clearInterval(autoSpinInterval);
+                autoSpinInterval = null;
+            }
+            if (spinQueue.length === 0 || currentSpinIndex >= spinQueue.length) {
+                alert('Tidak ada antrian spin. Klik "Spin Semua" terlebih dahulu.');
+                return;
+            }
+            autoSpinInterval = setInterval(() => {
+                if (!isSpinning && spinQueue.length > 0 && currentSpinIndex < spinQueue.length) {
+                    spinOne();
+                } else if (currentSpinIndex >= spinQueue.length) {
+                    clearInterval(autoSpinInterval);
+                    autoSpinInterval = null;
+                }
+            }, 600);
+        });
+        document.getElementById('btnStopAuto').addEventListener('click', () => {
+            if (autoSpinInterval) {
+                clearInterval(autoSpinInterval);
+                autoSpinInterval = null;
+            }
+        });
+        document.getElementById('btnReset').addEventListener('click', resetAll);
+        document.getElementById('btnExport').addEventListener('click', exportJSON);
+        document.getElementById('btnClearGroups').addEventListener('click', clearGroups);
 
-    // handler bagi kelompok
-    function handleBagi() {
-      const jumlahInput = document.getElementById('jumlahKelompok');
-      let jml = parseInt(jumlahInput.value, 10);
-      if (isNaN(jml) || jml < 2) jml = 2;
-      if (jml > 10) jml = 10;
-      jumlahInput.value = jml;
+        // Init
+        initStudents();
+        renderStudents();
+        renderGroups();
+        updateSpinnerInfo();
 
-      const modeRadios = document.querySelectorAll('input[name="genderMode"]');
-      let mode = 'campur';
-      for (let r of modeRadios) {
-        if (r.checked) { mode = r.value; break; }
-      }
-
-      const hasil = bagiKelompok(jml, mode);
-      if (hasil && hasil.length > 0) {
-        renderKelompok(hasil);
-      } else {
-        // jika gagal, jangan ubah tampilan
-        if (kelompokTerakhir.length) renderKelompok(kelompokTerakhir);
-        else {
-          document.getElementById('kelompokContainer').innerHTML = `<div class="empty-state"><i class="fas fa-exclamation-triangle" style="margin-right:0.5rem;"></i> Gagal membagi, coba jumlah kelompok lain</div>`;
-          document.getElementById('infoKelompok').textContent = '';
-        }
-      }
-    }
-
-    // reset ke data awal
-    function handleReset() {
-      initSiswa();
-      renderSiswa();
-      kelompokTerakhir = [];
-      document.getElementById('kelompokContainer').innerHTML = `<div class="empty-state"><i class="fas fa-users-slash" style="margin-right:0.5rem;"></i> Tekan "Bagi Kelompok" untuk melihat hasil</div>`;
-      document.getElementById('infoKelompok').textContent = '';
-      // reset jumlah ke 6
-      document.getElementById('jumlahKelompok').value = 6;
-      document.querySelector('input[name="genderMode"][value="campur"]').checked = true;
-    }
-
-    // export JSON
-    function exportJSON() {
-      if (!kelompokTerakhir || kelompokTerakhir.length === 0) {
-        alert('Belum ada hasil kelompok. Bagi terlebih dahulu.');
-        return;
-      }
-      const data = {
-        siswa: siswa,
-        kelompok: kelompokTerakhir,
-        timestamp: new Date().toISOString()
-      };
-      const json = JSON.stringify(data, null, 2);
-      const blob = new Blob([json], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `kelompok_kelas_${new Date().toISOString().slice(0,10)}.json`;
-      a.click();
-      URL.revokeObjectURL(url);
-    }
-
-    // inisialisasi
-    initSiswa();
-    renderSiswa();
-
-    // event listeners
-    document.getElementById('btnBagi').addEventListener('click', handleBagi);
-    document.getElementById('btnReset').addEventListener('click', handleReset);
-    document.getElementById('btnExportJSON').addEventListener('click', exportJSON);
-
-    // enter pada input jumlah
-    document.getElementById('jumlahKelompok').addEventListener('keyup', (e) => {
-      if (e.key === 'Enter') handleBagi();
-    });
-
-    // tampilkan default (kosong)
-    document.getElementById('kelompokContainer').innerHTML = `<div class="empty-state"><i class="fas fa-users-slash" style="margin-right:0.5rem;"></i> Tekan "Bagi Kelompok" untuk melihat hasil</div>`;
-  })();
+        // Enter on group count
+        document.getElementById('groupCount').addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') startSpinAll();
+        });
+    })();
 </script>
 </body>
 </html>
